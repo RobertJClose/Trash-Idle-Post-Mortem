@@ -1,0 +1,21 @@
+site_name: Trash Idle Post-mortem
+docs_dir: 'Post-mortem'
+theme:
+  name: material
+  locale: en
+  palette:
+    scheme: slate
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+nav:
+  - Introduction: 'index.md'
+  - Post-mortem:
+    - Initial Ideas: 'Post-mortem 01.md'
+    - Trash Idle - Development: 'Post-mortem 02.md'
+    - Trash Idle - Playtesting The Cauchy: 'Post-mortem 03.md'
+  - 'Basic Properties Of The Cauchy Distribution.md'
+  - 'Truncating The Cauchy.md' 
+  - 'What Do You Mean It Has No Mean.md'
+  - 'The Central Limit Theorem.md'
