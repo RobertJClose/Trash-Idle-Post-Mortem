@@ -1,0 +1,893 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Basic%20Properties%20Of%20The%20Cauchy%20Distribution/">
+      
+      
+        <link rel="next" href="../What%20Do%20You%20Mean%20It%20Has%20No%20Mean/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Truncating The Cauchy - Trash Idle Post-mortem</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#truncated-distributions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Trash Idle Post-mortem" class="md-header__button md-logo" aria-label="Trash Idle Post-mortem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Trash Idle Post-mortem
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Truncating The Cauchy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Post-mortem%2001/" class="md-tabs__link">
+          
+  
+  
+  Post-mortem
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Basic%20Properties%20Of%20The%20Cauchy%20Distribution/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Basic Properties Of The Cauchy Distribution
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Truncating The Cauchy
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../What%20Do%20You%20Mean%20It%20Has%20No%20Mean/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  What Do You Mean It Has No Mean
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../The%20Central%20Limit%20Theorem/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  The Central Limit Theorem
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Trash Idle Post-mortem" class="md-nav__button md-logo" aria-label="Trash Idle Post-mortem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Trash Idle Post-mortem
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Post-mortem
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Post-mortem
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Post-mortem%2001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Initial Ideas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Post-mortem%2002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trash Idle - Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Post-mortem%2003/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trash Idle - Playtesting The Cauchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basic%20Properties%20Of%20The%20Cauchy%20Distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Properties Of The Cauchy Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Truncating The Cauchy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Truncating The Cauchy
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-scaling-factor-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Scaling Factor $S$
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-filter-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Filter Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-truncated-cauchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Truncated Cauchy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20Do%20You%20Mean%20It%20Has%20No%20Mean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What Do You Mean It Has No Mean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Central%20Limit%20Theorem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Central Limit Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-scaling-factor-s" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Scaling Factor $S$
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-filter-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Filter Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-truncated-cauchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Truncated Cauchy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>As discussed in [[01 _ Using The Cauchy Distribution In A Game]], my initial attempts at using the Cauchy distribution as a game design element focused on random hit chances and random loot tables. I struggled to incorporate the distribution into those scenarios however. One of the issues was that in these scenarios, we typically make use of a random number between zero and one. The Cauchy distribution spans the entire real number-line however. </p>
+<p>A natural idea then is to use the distribution's location and scale parameters to squish the distribution almost entirely within the range of zero to one. Here is a Cauchy distribution which has been squished in the $[0,1]$ range using the location and scale parameter:</p>
+<p>![[Cauchy_SquishedZeroToOne.png]]
+<em>Desmos</em></p>
+<p>Once we've squished the function, we <em>truncate</em> the distribution - if we draw a value outside of the range $[0,1]$, we discard it and draw again until we have a value within the appropriate range.</p>
+<p>We could also consider clamping the values drawn, however it is easier to study the behaviour of truncated distributions from a maths perspective, and that's what I have tried to do.</p>
+<blockquote>
+<p>[!Summary] The Following Analysis Is Unfinished
+I tried my best to analyse the statistical behaviour of the squished and truncated Cauchy distribution above, however I was only able to get so far. 
+I'll share as much progress as I have.</p>
+</blockquote>
+<h1 id="truncated-distributions">Truncated Distributions</h1>
+<p>In order for a graph to represent a probability distribution, the area under the curve must be equal to one square-unit. This fact then allows us to interpret area-under-the-curve as the probability of drawing a number within a certain range.</p>
+<p>![[Normal-Area.jpg]]
+<em><a href="https://byjus.com/maths/probability-distribution/">Byjus</a>)</em></p>
+<p>When we truncate a distribution, we chop off it's tails and uniformly add the lost area to the middle section of the curve that remains. This keeps the total area under the curve equal to one.</p>
+<p>![[Modellica.png]]
+<em>Modellica - A truncated Normal distribution</em></p>
+<p>Mathematically, the probability function is restricted by a kind of filtering function $\text{filter}(x)$, and what remains is multiplied by a scaling factor $S$.</p>
+<h2 id="the-scaling-factor-s">The Scaling Factor $S$</h2>
+<p>The scaling factor $S$ depends on where we do the truncation. Continuing with the idea that we are chopping off the tails, I'm going to parameterise the behaviour of $S$ by asking, what percentage of the tails are we chopping off? </p>
+<p>We represent that amount as a number between zero and one and we'll call it $p$. I'll consider $p$ to be the fraction of <em>each</em> tail that we chop off, so the total fraction lost is $2p$. The resulting equation for $S$ is this:</p>
+<p>$$
+S(p) = \frac{1}{1-2p}
+$$</p>
+<p>So if we want to chop off 50% of the graph, then we are going to lose 25% of each tail. This gives us $p=0.25=1/4$. The equation then evaluates to $\frac{1}{1/2}$, giving us a final scale factor of $\frac{2}{1}=2$.</p>
+<p>Once we've decided a value for $p$, we can also calculate where exactly on the tails we are performing the truncation. This can be done using the distribution's <em>quantile</em> function. The quantile function is an alternative equation for representing the same distribution. The quantile function takes a probability $0 \leq P \leq 1$ and tells us the $x$ value such that the probability of drawing a value between zero and $x$ is equal to $P$. </p>
+<p>The equation for the Cauchy distribution is this</p>
+<p>$$
+\text{Cauchy Quantile}(P) = \tan ( \pi \cdot (P - 1/2) )
+$$</p>
+<p>The graph of this description of the Cauchy is quite different to the bell-curve.</p>
+<p>![[Cauchy Quantile Graph.png]]</p>
+<p>The truncation position of the bottom tail is $\text{Quantile}(p)$, while for the top tail it is $\text{Quantile}(1 - p)$. If we write the truncation position of the top tail as $x_p$, we can derive</p>
+<p>$$
+x_p = - \tan\left(\pi \cdot (p - 1/2)\right)
+$$</p>
+<h2 id="the-filter-function">The Filter Function</h2>
+<p>The filter function simply restricts the range:</p>
+<p>$$
+\text{filter}(x) = 
+\begin{cases} 
+1 &amp; -x_p &lt; x &lt; x_p \
+0 &amp; \text{Otherwise}
+\end{cases}
+$$</p>
+<h2 id="the-truncated-cauchy">The Truncated Cauchy</h2>
+<p>Bringing it all together, we start with the Cauchy distribution and multiply it by the scaling factor and the filter function.</p>
+<p>$$
+\begin{align}</p>
+<p>\text{PDF}(x)_{truncated} &amp;= S \times \text{filter}(x) \times \text{PDF}(x) \ \</p>
+<p>\text{PDF}(x)_{Cauchy} &amp;= \frac{1}{\pi (1 + x^2)} \ \</p>
+<p>S(p) &amp;= \frac{1}{1-2p} \ \</p>
+<p>x_p &amp;= - \tan\left(\pi \cdot (p - 1/2)\right) \ \</p>
+<p>\text{filter}(x) &amp;= 
+\begin{cases} 
+1 &amp; -x_p &lt; x &lt; x_p \
+0 &amp; \text{Otherwise}
+\end{cases}</p>
+<p>\end{align}
+$$</p>
+<p>This tells us the probability density function of the distribution, which we may then study. </p>
+<p>Generating truncated-Cauchy variables is almost the same as regular Cauchy variables. We simply discard those that lie outside our desired range:</p>
+<pre><code class="language-C#">using UnityEngine;
+
+public float SampleTruncatedCauchy(float p, float location, float scale)
+    {
+        float uniformSample;
+
+        do 
+        {
+            uniformSample = Random.value;
+        } 
+        while (uniformSample &lt; p || uniformSample &gt; 1 - p);
+
+        float sample = location + scale * 
+                        Mathf.Tan(Mathf.PI * (uniformSample - 0.5f));
+
+        return sample;
+    }
+</code></pre>
+<h1 id="properties-of-a-truncated-cauchy-distribution">Properties Of A Truncated Cauchy Distribution</h1>
+<p>I wanted to make us of the Cauchy distribution because it has no mean value. Sadly, any truncation of the Cauchy distribution removes this fact and restores the mean. However, if the truncation is very conservative, the resulting distribution is <em>nearly</em> a Cauchy. In such a case, it can take a large number of samples before the sample mean converges upon the true population mean.</p>
+<p>I'd like to quantify the above. </p>
+<hr />
+<h2 id="a-truncated-cauchy">A Truncated Cauchy</h2>
+<p>Sadly, when we truncate the Cauchy distribution, the resulting function does have a well defined population mean. This destroys the feature of the distribution which I found most interesting, although all is not lost.</p>
+<p>Suppose we only chop off a tiny portion of the tails, so the truncated distribution is <em>nearly</em> identical to the Cauchy distribution. Although any degree of truncation does produce a distribution with an average value, it can still take a <em>very</em> long time for a sample mean to converge onto it. Perhaps we can squish our Cauchy distribution within $[0,1]$ such that performing a truncation into that range produces a distribution whose true average value takes an impractical amount of time to appear?</p>
+<hr />
+<h1 id="calculating-the-moments">Calculating The Moments</h1>
+<h5 id="the-standard-deviation">The Standard Deviation</h5>
+<p>Let's start with $\sigma$ - the standard deviation. This is defined as the square root of the <em>variance</em>, which for a continuous probability distribution is defined as:</p>
+<p>$$
+\newcommand\dif{\mathop{}!\mathrm{d}}
+\text{Var}(X) = \int_\mathbb{R} x^2 \cdot \text{PDF}(x) \dif x - \mu^2
+$$</p>
+<p>Where $\mu$ is the mean of the distribution, and the integral is evaluated over the whole real number line. Truncating the standard Cauchy produces $\mu = 0$ so we will omit it from here.</p>
+<p>Returning to our definition of a truncated Cauchy distribution</p>
+<p>$$
+\text{Standard Cauchy PDF}(x) = \frac{1}{\pi (1 + x^2)}
+$$
+$$
+\text{PDF}(x)_{truncated} = S \times \text{filter}(x) \times \text{PDF}(x) 
+$$
+$$
+S(p) = \frac{1}{1-2p}
+$$</p>
+<p>We use this value to define the filter function, which then changes the limits of the integral to give us this expression for the variance of a truncated-Cauchy</p>
+<p>$$
+\newcommand\dif{\mathop{}!\mathrm{d}}
+\text{Var}(X) = \frac{S}{\pi} \int_{-x_p}^{x_p} \frac{x^2}{1 + x^2} \dif x
+$$</p>
+<p>I'm quite proud of the fact that despite many years away from formal maths education or professional work, I was still able to do this integral myself and (up to some rearranging) I got the same answer as Symbolab</p>
+<p>$$
+\text{Var}(X) = \frac{2S}{\pi} \left( x_p - \arctan x_p \right)
+$$</p>
+<p>The standard deviation is then the square-root of the variance</p>
+<p>$$
+\sigma = \sqrt{\frac{2S}{\pi} \left( x_p - \arctan x_p \right)}
+$$</p>
+<p>The fourth moment of a truncated-Cauchy is</p>
+<p>$$
+\mu_4 = \frac{2S}{\pi} \left[ \frac{x_p^3}{3} - x_p + \arctan x_p \right]
+$$</p>
+<p>From the above we may calculated the expected variance of the sample variance from the following</p>
+<p>$$
+\langle \text{Var}(s^2) \rangle = \frac{1}{N} \left( \mu_4 - \frac{N - 3}{N - 1} \mu_2^2 \right)
+$$</p>
+<p>Oh fucking hell!</p>
+<p>$$
+\mu_n = \frac{2S}{N} \left[ \sum_{i=0}^{n}  \right]
+$$
+$$
+\text{for } n &gt; 0
+$$</p>
+<h2 id="-">---</h2>
+<hr />
+<h1 id="oh-dear">Oh Dear</h1>
+<p>To test the above equation for the variance, I wrote this C# code:</p>
+<ul>
+<li>https://dotnetfiddle.net/57g4yU</li>
+</ul>
+<p>The sample variance consistently differs from the equation above. I've really tried to spot any mistakes in either the equation or the code, but I haven't been able to find anything. </p>
+<p>At the very least, if the above code is an accurate simulation of the truncated-Cauchy distribution, then we can use it to play around with values for $p$ and $n$. We can rerun the code and watch the sample mean to get a feel for how wildly it jumps around the population mean of zero for different degrees of truncation. We can also look directly at what kind of sample variance values we get. </p>
+<p>Having done this, I don't feel I should spend any more time trying to work it out. My instinct is that the truncated Cauchy won't be practical as an interesting game design element, but the idea does still feel worth exploring to completion. I'm sorry to leave it here, but I thought I'd share as much progress as I have on this topic.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
