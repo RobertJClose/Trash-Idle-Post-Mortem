@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../Post-mortem%2004/">
+      
+      
+        <link rel="next" href="../Generating%20Cauchy%20Samples/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>What Do You Mean It Has No Mean - Trash Idle Post-mortem</title>
+        <title>Conclusion And Future Ideas - Trash Idle Post-mortem</title>
       
     
     
@@ -66,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dice-rolls" class="md-skip">
+        <a href="#conclusions-and-future-ideas" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              What Do You Mean It Has No Mean
+              Conclusion And Future Ideas
             
           </span>
         </div>
@@ -186,10 +190,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Post-mortem%2001/" class="md-tabs__link">
           
   
@@ -305,26 +311,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -337,7 +348,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Post-mortem
@@ -440,10 +451,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Post-mortem%2005/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -454,6 +474,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -527,32 +548,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dice-rolls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dice Rolls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-cauchy-distributions-mean-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Cauchy Distribution's Mean Values
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -568,43 +565,31 @@
 
 
 
-  <h1>What Do You Mean It Has No Mean</h1>
-
-<p>Let's try to understand a bit more about what it means for this distribution to have an undefined mean. We will start with the far simpler example of rolling a dice.</p>
-<h2 id="dice-rolls">Dice Rolls</h2>
-<p>Let's take a fair six-sided dice and roll it a bunch of times. </p>
-<p>We'll denote the face value produced by the $i\text{-th}$ roll as $D_i$, and starting from $i=1$ we'll roll the dice $N$ times in total. We will assume that $N$ is a very large number. Our collection of dice rolls is then this set:</p>
-<p>$$
-D={D_1, D_2, ..., D_N}
-$$</p>
-<p>Now we will take our recorded dice rolls and we'll calculate how the mean value of the rolls changed throughout the experiment. For example, we could consider the first three rolls and calculate what the mean value of those three rolls was. We will tag the mean values with a bar over the top of the letters, like $\bar{D}$.</p>
-<p>To calculate the mean value up to the $n\text{-th}$ roll:</p>
-<p>$$
-\bar{D}<em>n = \frac{1}{n} \sum</em>{i=1}^n D_i 
-$$</p>
-<p>The end result is a new set that tells us how the mean value changed as we rolled the dice. </p>
-<p>$$
-\bar{D}={\bar{D}_1, \bar{D}_2, ... , \bar{D}_N}
-$$</p>
-<p>So the value of $\bar{D}_4$ is the average of the first four dice rolls.</p>
-<p>A fair six-sided dice roll has a well defined true mean value of $3.5$, which is simply the average value of the faces. How do the values in $\bar{D}$ compare to the true mean value?</p>
-<p>![[Average Dice Rolls.png]]
-<em>Wikipedia</em></p>
-<p>To start with, the average value can deviate away from the true value quite dramatically. The more you roll the dice however, the averages get closer to the true mean value. </p>
-<p>You can explore this for yourself at <a href="https://researchdatapod.com/interactive-dice-roller/">this website</a>, where you may roll several dice simultaneously (this is equivalent to rolling the same dice several times). Each time you run the simulation, the mean value will be calculated automatically. If you roll just a few dice, the mean value can jump around quite dramatically. If you instead roll many dice at once, the mean value will rarely stray far from the expected value of $3.5$. </p>
-<h2 id="the-cauchy-distributions-mean-values">The Cauchy Distribution's Mean Values</h2>
-<p>Let's do the same experiment, only this time we will draw random numbers from the Cauchy distribution instead. </p>
-<p>Again we draw $N$ values. This time we'll denote them as $C_i$:</p>
-<p>$$
-C={C_1, C_2,...,C_N}
-$$</p>
-<p>As before we calculate how the average value changed throughout the experiment:</p>
-<p>$$
-\bar{C}={\bar{C}_1,\bar{C}_2,...,\bar{C}_N}
-$$</p>
-<p>What values do we find in this set for the Cauchy distribution? </p>
-<p>Unlike in our dice example, the values $\bar{C}_i$ do <strong>not</strong> converge on any particular value. The values $\bar{C}_i$ endlessly fluctuate, and never settle down upon any value. This is what it means for the Cauchy distribution to have no mean.</p>
-<p>If the distribution has no mean, then what values end up in $\bar{C}$?</p>
+<h1 id="conclusions-and-future-ideas">Conclusions And Future Ideas</h1>
+<p>I feel we have learned all we can from Trash Idle's use of the Cauchy distribution. In summary, this is what I feel I have learned:</p>
+<ul>
+<li>The Cauchy distribution isn't quite able to recreate some of the most common RNG scenarios like random hit chances or loot drops. It may instead work best as a source for some kind of currency because the Cauchy samples can take any positive or negative value on the number line.</li>
+<li>The distribution can be used to create unique random-walks throughout a parameter space. The walkers will explore a particular location for some time, before making an extreme jump somewhere else. </li>
+<li>The Cauchy distribution has <strong>fat tails</strong>. These massively amplify the impact of rare rolls.</li>
+<li>While often not explicitly included, the Normal distribution is present in practically all games as a consequence of the <strong>Central Limit Theorem</strong>. </li>
+<li>Because the Cauchy distribution is a stable distribution with infinite variance, it does not obey the CLT. Player's of a game using the Cauchy distribution are free from the CLT, and can be distributed in a fat-tailed manner - thus the rarest of lucky players might benefit from extreme boons.</li>
+</ul>
+<p><img alt="" src="../Media/TrashIdleFirstDraft.png" />
+<em>An early draft for Trash Idle</em></p>
+<h1 id="what-next">What Next?</h1>
+<p>There is a final thing I discovered while making the game. The Cauchy distribution is not the only fat-tailed stable distribution...</p>
+<p>In fact, there is a whole family of curves known as the <strong>Lévy alpha-stable distributions</strong>. Most of these distributions cannot be written down in neat forms, but along with the Cauchy distribution there is one other such distribution: the <strong>Lévy distribution</strong>:</p>
+<p><img alt="" src="../Media/Levy_Graph.png" />
+<em>Levy Distribution</em></p>
+<p><img alt="Stable Distributions" src="../Media/StableDistributions.png" />
+<em>Normal distribution is blue, Cauchy is red</em></p>
+<p>The Levy distribution is also fat-tailed, and is stable. Thus it is also free from the Central Limit Theorem, and can throw out some <em>extreme</em> values for the luckiest of rolls. Comparing it to both the Cauchy distribution and Normal distribution however, we've now got such a distribution which is <em>strictly positive</em> and asymmetric. Unlike the Cauchy, it does have a well-defined means value. Well, it actually has <em>infinite</em> mean! </p>
+<p>Because it is strictly positive, this might be the more interesting distribution to make use of. A friend of mine suggested a shotgun where the number of pellets is Levy distributed, which is an idea that I love. I think this will be the next thing I explore.</p>
+<p>Thanks for reading! Get in touch if you have questions.</p>
+<ul>
+<li><a href="https://discordapp.com/users/699375169398898688">Discord</a></li>
+<li><a href="mailto:robertclose@pm.me">Email</a> </li>
+</ul>
 
 
 
@@ -629,6 +614,44 @@ $$</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Post-mortem%2004/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Central Limit Theorem">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                The Central Limit Theorem
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Generating%20Cauchy%20Samples/" class="md-footer__link md-footer__link--next" aria-label="Next: Generating Cauchy Samples">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Generating Cauchy Samples
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

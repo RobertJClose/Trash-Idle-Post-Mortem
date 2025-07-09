@@ -16,7 +16,7 @@
     
     
       
-        <title>What Do You Mean It Has No Mean - Trash Idle Post-mortem</title>
+        <title>Ideas - Trash Idle Post-mortem</title>
       
     
     
@@ -65,11 +65,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#dice-rolls" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              What Do You Mean It Has No Mean
+              Ideas
             
           </span>
         </div>
@@ -528,32 +523,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dice-rolls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dice Rolls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-cauchy-distributions-mean-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Cauchy Distribution's Mean Values
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -568,43 +537,33 @@
 
 
 
-  <h1>What Do You Mean It Has No Mean</h1>
+  <h1>Ideas</h1>
 
-<p>Let's try to understand a bit more about what it means for this distribution to have an undefined mean. We will start with the far simpler example of rolling a dice.</p>
-<h2 id="dice-rolls">Dice Rolls</h2>
-<p>Let's take a fair six-sided dice and roll it a bunch of times. </p>
-<p>We'll denote the face value produced by the $i\text{-th}$ roll as $D_i$, and starting from $i=1$ we'll roll the dice $N$ times in total. We will assume that $N$ is a very large number. Our collection of dice rolls is then this set:</p>
-<p>$$
-D={D_1, D_2, ..., D_N}
-$$</p>
-<p>Now we will take our recorded dice rolls and we'll calculate how the mean value of the rolls changed throughout the experiment. For example, we could consider the first three rolls and calculate what the mean value of those three rolls was. We will tag the mean values with a bar over the top of the letters, like $\bar{D}$.</p>
-<p>To calculate the mean value up to the $n\text{-th}$ roll:</p>
-<p>$$
-\bar{D}<em>n = \frac{1}{n} \sum</em>{i=1}^n D_i 
-$$</p>
-<p>The end result is a new set that tells us how the mean value changed as we rolled the dice. </p>
-<p>$$
-\bar{D}={\bar{D}_1, \bar{D}_2, ... , \bar{D}_N}
-$$</p>
-<p>So the value of $\bar{D}_4$ is the average of the first four dice rolls.</p>
-<p>A fair six-sided dice roll has a well defined true mean value of $3.5$, which is simply the average value of the faces. How do the values in $\bar{D}$ compare to the true mean value?</p>
-<p>![[Average Dice Rolls.png]]
-<em>Wikipedia</em></p>
-<p>To start with, the average value can deviate away from the true value quite dramatically. The more you roll the dice however, the averages get closer to the true mean value. </p>
-<p>You can explore this for yourself at <a href="https://researchdatapod.com/interactive-dice-roller/">this website</a>, where you may roll several dice simultaneously (this is equivalent to rolling the same dice several times). Each time you run the simulation, the mean value will be calculated automatically. If you roll just a few dice, the mean value can jump around quite dramatically. If you instead roll many dice at once, the mean value will rarely stray far from the expected value of $3.5$. </p>
-<h2 id="the-cauchy-distributions-mean-values">The Cauchy Distribution's Mean Values</h2>
-<p>Let's do the same experiment, only this time we will draw random numbers from the Cauchy distribution instead. </p>
-<p>Again we draw $N$ values. This time we'll denote them as $C_i$:</p>
-<p>$$
-C={C_1, C_2,...,C_N}
-$$</p>
-<p>As before we calculate how the average value changed throughout the experiment:</p>
-<p>$$
-\bar{C}={\bar{C}_1,\bar{C}_2,...,\bar{C}_N}
-$$</p>
-<p>What values do we find in this set for the Cauchy distribution? </p>
-<p>Unlike in our dice example, the values $\bar{C}_i$ do <strong>not</strong> converge on any particular value. The values $\bar{C}_i$ endlessly fluctuate, and never settle down upon any value. This is what it means for the Cauchy distribution to have no mean.</p>
-<p>If the distribution has no mean, then what values end up in $\bar{C}$?</p>
+<ul>
+<li>
+<p>With a standard Cauchy distribution, players are just as likely to end up with a net amount of positive <em>or</em> negative money. Usually negative money in a game is a strictly bad thing, but I thought I should allow it somehow. The idea was to present the player with upgrades in both directions, with positive money allowing access to the usual sort of stuff, while sufficient debt would allow access to <em>dark</em> upgrades. Aren't most governments in debt anyway?</p>
+</li>
+<li>
+<p>Using the location and scale parameter, the Cauchy reward could be biased in the positive or negative directions, and the likelihood of an extreme windfall could be influenced. At the start of the game, the Cauchy could be negatively biased and narrow, so the player is always losing but at least the stakes are low. As progress is made the player can start regularly making positive gains, with much greater potential for big wins and devastating losses. </p>
+</li>
+<li>
+<p>At one point I imagined that the win-condition of the game would be to make a bazillion smackers. Rather than work towards this goal incrementally however, the game could be designed such that the player can only realistically achieve this goal through a single lucky roll. The Cauchy's <em>fat tails</em> should make implementing such a design more feasible, as extreme rolls are far more rewarding compared to more common distributions.</p>
+</li>
+<li>
+<p>Given the fat tails and volatile nature of Cauchy values, I thought multiple currencies would be necessary. These alternative currencies could be earned through more predictable distributions so that the game still has a solid structure and isn't totally chaotic. I then envisioned having different upgrade trees for each currency, giving each currency a different qualitative flavour.</p>
+</li>
+<li>
+<p>I also considered having several currencies make use of Cauchy distributions with different location and scale parameters. One could also link the Cauchy parameters to the present state of the player's various bank accounts. For example, lots of dollars might make it possible to start earning lots of yen. </p>
+</li>
+<li>
+<p>I also considered a few ways of refreshing the player's typing interaction so that it stays relevant as progress is made. Initially it might not matter what the player types, but later on they are rewarded for avoiding repetition - I was very tempted by the mathematical problem of how to quantify the randomness of the player's input stream. </p>
+</li>
+<li>
+<p>I also considered augmenting the typing with presses of particular keys like the space-bar or the backspace key. For example, if the player's typing represents lines of code, pressing the space-bar introduces tokens within each line, and bonus rewards might be on the table for lines of code with equally spaced tokens. Perhaps sometimes mistakes are introduced, and backspaces are necessary to produce a higher quality piece of trash.</p>
+</li>
+</ul>
+<p><img alt="" src="../Media/TrashIdleFirstDraft.png" />
+<em>An early version of the game</em></p>
 
 
 

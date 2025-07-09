@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../Post-mortem%2003/">
+      
+      
+        <link rel="next" href="../Post-mortem%2005/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>What Do You Mean It Has No Mean - Trash Idle Post-mortem</title>
+        <title>The Central Limit Theorem - Trash Idle Post-mortem</title>
       
     
     
@@ -66,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dice-rolls" class="md-skip">
+        <a href="#the-central-limit-theorem" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              What Do You Mean It Has No Mean
+              The Central Limit Theorem
             
           </span>
         </div>
@@ -186,10 +190,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Post-mortem%2001/" class="md-tabs__link">
           
   
@@ -305,26 +311,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -337,7 +348,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Post-mortem
@@ -417,10 +428,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Post-mortem%2004/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -431,6 +451,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -527,32 +548,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dice-rolls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dice Rolls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-cauchy-distributions-mean-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Cauchy Distribution's Mean Values
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -568,43 +565,30 @@
 
 
 
-  <h1>What Do You Mean It Has No Mean</h1>
-
-<p>Let's try to understand a bit more about what it means for this distribution to have an undefined mean. We will start with the far simpler example of rolling a dice.</p>
-<h2 id="dice-rolls">Dice Rolls</h2>
-<p>Let's take a fair six-sided dice and roll it a bunch of times. </p>
-<p>We'll denote the face value produced by the $i\text{-th}$ roll as $D_i$, and starting from $i=1$ we'll roll the dice $N$ times in total. We will assume that $N$ is a very large number. Our collection of dice rolls is then this set:</p>
-<p>$$
-D={D_1, D_2, ..., D_N}
-$$</p>
-<p>Now we will take our recorded dice rolls and we'll calculate how the mean value of the rolls changed throughout the experiment. For example, we could consider the first three rolls and calculate what the mean value of those three rolls was. We will tag the mean values with a bar over the top of the letters, like $\bar{D}$.</p>
-<p>To calculate the mean value up to the $n\text{-th}$ roll:</p>
-<p>$$
-\bar{D}<em>n = \frac{1}{n} \sum</em>{i=1}^n D_i 
-$$</p>
-<p>The end result is a new set that tells us how the mean value changed as we rolled the dice. </p>
-<p>$$
-\bar{D}={\bar{D}_1, \bar{D}_2, ... , \bar{D}_N}
-$$</p>
-<p>So the value of $\bar{D}_4$ is the average of the first four dice rolls.</p>
-<p>A fair six-sided dice roll has a well defined true mean value of $3.5$, which is simply the average value of the faces. How do the values in $\bar{D}$ compare to the true mean value?</p>
-<p>![[Average Dice Rolls.png]]
-<em>Wikipedia</em></p>
-<p>To start with, the average value can deviate away from the true value quite dramatically. The more you roll the dice however, the averages get closer to the true mean value. </p>
-<p>You can explore this for yourself at <a href="https://researchdatapod.com/interactive-dice-roller/">this website</a>, where you may roll several dice simultaneously (this is equivalent to rolling the same dice several times). Each time you run the simulation, the mean value will be calculated automatically. If you roll just a few dice, the mean value can jump around quite dramatically. If you instead roll many dice at once, the mean value will rarely stray far from the expected value of $3.5$. </p>
-<h2 id="the-cauchy-distributions-mean-values">The Cauchy Distribution's Mean Values</h2>
-<p>Let's do the same experiment, only this time we will draw random numbers from the Cauchy distribution instead. </p>
-<p>Again we draw $N$ values. This time we'll denote them as $C_i$:</p>
-<p>$$
-C={C_1, C_2,...,C_N}
-$$</p>
-<p>As before we calculate how the average value changed throughout the experiment:</p>
-<p>$$
-\bar{C}={\bar{C}_1,\bar{C}_2,...,\bar{C}_N}
-$$</p>
-<p>What values do we find in this set for the Cauchy distribution? </p>
-<p>Unlike in our dice example, the values $\bar{C}_i$ do <strong>not</strong> converge on any particular value. The values $\bar{C}_i$ endlessly fluctuate, and never settle down upon any value. This is what it means for the Cauchy distribution to have no mean.</p>
-<p>If the distribution has no mean, then what values end up in $\bar{C}$?</p>
+<h1 id="the-central-limit-theorem">The Central Limit Theorem</h1>
+<p>I think this is one of the biggest lessons that I learned from making Trash Idle. I set out to make a game where the Cauchy distribution was a game design element, and I then realised that the Normal distribution is already a near universal but hidden element in practically all games.</p>
+<h1 id="rolling-the-dice">Rolling The Dice</h1>
+<p>Consider rolling two dice, and taking the average of their values. This sample mean is itself a random variable, as its value is random according to whatever two values happen to appear on the two dice. </p>
+<p>The most common scenario is that the sum of the dice values is 7, and so the most common sample mean will be 3.5. There is only a single combination which produces a sum of 2 or 12 however, so we're less like to find a sample mean of 1 or 6. We can plot this behaviour on a histogram:</p>
+<p><img alt="" src="../Media/Sum%20Of%20Two%20Dice%20Rolls.png" /></p>
+<p>The above histogram represents the probability of the mean value of two dice rolls. What if we increase the number of dice rolls? </p>
+<p><img alt="" src="../Media/Sum%20Of%204%20Dice%20Rolls.png" />
+<img alt="" src="../Media/Sum%20Of%2030%20Dice%20Rolls.png" />
+<em><a href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/CentralLimit/">Source</a></em></p>
+<p>As the number of dice rolls increases, the distribution of the sample mean value increasingly resembles that of a Normal distribution centred at the true population mean of 3.5! Furthermore, the distribution is becoming narrower as the number of rolls increases. This is the <em>Central Limit Theorem</em>, or <strong>CLT</strong>, and it is the reason why we expect the average value of dice rolls to get closer to 3.5 over time. The theorem states that the probability distribution for the average value of your samples approaches a Normal distribution over time. More precisely, the rate of approach is proportional to <code>Sqrt(N)</code>, where <code>N</code> is the number of samples.</p>
+<p>An important feature of the theorem is that it does not matter what underlying distribution was used to create the random samples: </p>
+<ul>
+<li><strong>If your game uses dice, or has random hit chances, or random loot drops, the Normal distribution is present in your game.</strong></li>
+</ul>
+<p>As a more practical example, consider a game like XCOM again. Early on in the game, levels might only have a few aliens, with very little health. In order to kill all the aliens and beat the level, the XCOM agents might only need to fire their weapons a handful of times. However, later levels are full of many high-health aliens, and take much longer to complete. The player will be making many many random rolls throughout the later level, and thus the CLT is more strongly in play. Different players might experience lots more variability in their luck in the smaller levels, but can generally expect to be equally lucky in the later levels. If one player has a mathematically unsound strategy, they might get lucky in small levels but get inevitably crushed in larger levels. </p>
+<h1 id="breaking-free-of-the-central-limit-theorem">Breaking Free Of The Central Limit Theorem</h1>
+<p>One consequence of the CLT is that the Normal distribution is "stable". This means that if we take a bunch of Normally distributed samples, then their average value is also Normally distributed. I kind of think of the Normal distribution like a great attractor that sucks in other distributions and doesn't let them leave:</p>
+<p><img alt="" src="../Media/Normal_Distribution_Stability.png" />
+<em>Binomial distributions answer questions like "For a given hit chance, what is the probability of X hits?"</em> <em>Poisson distributions resolve "For a given average number of ore deposits per square-km, what is the probability of X deposits?"</em></p>
+<p>In the proof of the Central Limit Theorem, one assumes that the underlying distribution of the samples has a finite <strong>variance</strong>. The variance is a measure of the dispersion of the distribution around its means value. However, the fat-tailed Cauchy distribution has infinite variance! Thus the Cauchy distribution does not obey the CLT. Furthermore, the Cauchy distribution turns out to <em>also</em> be stable. Thus we can use the Cauchy distribution to break free from the CLT! </p>
+<p><img alt="" src="../Media/Cauchy_Distribution_Stability.png" /></p>
+<p>I was unlikely to get a statistically significant number of people playing my game concurrently, but unless another game has ever made use of the Cauchy distribution, Trash Idle might be the first game to ever has its players distributed in a non-Normal fashion. Could <em>this</em> be an interesting concept for designers of multiplayer games? </p>
+<p><a href="../Post-mortem%2005/">Part Five</a></p>
 
 
 
@@ -629,6 +613,44 @@ $$</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Post-mortem%2003/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playtesting The Cauchy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Playtesting The Cauchy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Post-mortem%2005/" class="md-footer__link md-footer__link--next" aria-label="Next: Conclusion And Future Ideas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Conclusion And Future Ideas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
