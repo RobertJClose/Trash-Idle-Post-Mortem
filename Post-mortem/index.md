@@ -1,7 +1,9 @@
 # Trash Idle Post-mortem
-I recently made a game called **Trash Idle** which you can play [here](https://justrobjustrobjustrob.itch.io/trashy-idle)
+I recently made a game called **Trash Idle**, and it looks like this! 
 
 ![Game Screenshot](./Media/Long%20Run/619.png)
+
+You can play the game [here](https://justrobjustrobjustrob.itch.io/trashy-idle). I recommend getting it running and leaving it in the background while you read about it here.
 
 The game was my submission to the [Pompous Trash Jam 2025](https://itch.io/jam/pompous-trash-2025), and I used the occasion as an opportunity to try using an experimental game-design element that has been on my mind for some time.
 # An Unusual Source Of Random Numbers
@@ -24,9 +26,6 @@ The Normal distribution is arguably the most important probability distribution 
 Given its visual similarity to the Normal distribution, I found it hard to believe that the Cauchy bell-curve has no average value. Surely they both have their average value right there in the middle? 
 
 What I wanted to explore was if the Cauchy distribution could be used to create some interesting experiences for players in a game. Random numbers are already a common game design-element, and I think most players are generally familiar with how randomness is used in games - could this distribution catch players by surprise? Would players be able to tell something strange is going on? 
-# Structure Of This Post-mortem
-I've created this post-mortem to share what I learned from making **Trash Idle**. This includes lessons about the maths of the distribution, but more importantly it includes lessons about the Cauchy distribution as a game-design element.
 
-I've organised the post-mortem into a main-sequence of notes, which will stay as focused as possible on the game-design perspective. Throughout the main-sequence notes, I occasionally make reference to mathematical deep dives which explain the drawn conclusions - I've separated those lessons into standalone pages. Those deep dives can take time to explain, so I thought it best to keep the main reading as focused as possible.
-
-Finally, I've also included a cheat-sheet containing all of the equations and code examples that are scattered throughout. 
+* [Post-mortem Part One](./Post-mortem%2001.md)
+* [Generating Cauchy Samples](./Generating%20Cauchy%20Samples.md)

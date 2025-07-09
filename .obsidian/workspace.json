@@ -8,7 +8,21 @@
         "type": "tabs",
         "children": [
           {
-            "id": "46dad37ddbdb0218",
+            "id": "422491b81dc512e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Post-mortem/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "1bf593c5cda66e95",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +34,23 @@
               "icon": "lucide-file",
               "title": "Post-mortem 01"
             }
+          },
+          {
+            "id": "8540178441275fcd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Post-mortem/Truncating The Cauchy.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Truncating The Cauchy"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -168,22 +197,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "46dad37ddbdb0218",
+  "active": "8540178441275fcd",
   "lastOpenFiles": [
-    "New Text Document.txt",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/RECORDi7_zzcs5.tmp",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/licenses/LICENSE",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/WHEEL",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/REQUESTED",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/licenses",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/RECORD",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/METADATA",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/INSTALLER",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info/entry_points.txt",
-    "venv/Lib/site-packages/mkdocs_material-9.6.15.dist-info",
-    "venv/Lib/site-packages/material/templates/assets/images/favicon.png",
-    "venv/Lib/site-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg",
-    "venv/Lib/site-packages/mkdocs/themes/mkdocs/img/grid.png",
+    "site/Post-mortem 05/index.html",
+    "site/Post-mortem 05",
+    "site/Post-mortem 04/index.html",
+    "site/Post-mortem 04",
+    "site/Ideas/index.html",
+    "site/Ideas",
+    "site/Generating Cauchy Samples/index.html",
+    "site/Generating Cauchy Samples",
+    "site/Basic Properties Of The Cauchy Distribution/index.html",
+    "site/Basic Properties Of The Cauchy Distribution",
+    "site/index.html",
+    "site/Media/Levy_Graph.png",
+    "site/Media/Cauchy_Distribution_Stability.png",
+    "Post-mortem/Post-mortem 01.md",
+    "Post-mortem/Post-mortem 02.md",
+    "Post-mortem/Post-mortem 03.md",
+    "Post-mortem/index.md",
+    "Post-mortem/Generating Cauchy Samples.md",
+    "Post-mortem/Basic Properties Of The Cauchy Distribution.md",
+    "Post-mortem/Post-mortem 05.md",
+    "Post-mortem/Post-mortem 04.md",
+    "Post-mortem/Media/Levy_Graph.png",
+    "Post-mortem/Media/Cauchy_Distribution_Stability.png",
+    "Post-mortem/Media/Normal_Distribution_Stability.png",
+    "Post-mortem/The Central Limit Theorem.md",
+    "Post-mortem/Media/Wiener_Walks.png",
+    "Post-mortem/Ideas.md",
+    "site/assets/images/favicon.png",
+    "site/Media/Long Run/991.png",
+    "site/Media/Long Run/691.png",
+    "site/Media/Long Run/619.png",
     "venv/Lib/site-packages/mkdocs_get_deps-0.2.0.dist-info/licenses/LICENSE.md",
     "venv/Lib/site-packages/pymdown_extensions-10.16.dist-info/licenses/LICENSE.md",
     "venv/Lib/site-packages/backrefs-5.9.dist-info/licenses/LICENSE.md",

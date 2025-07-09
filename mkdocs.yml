@@ -9,13 +9,19 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.footer
+extra:
+   social:
+     - icon: fontawesome/brands/Discord
+       link: https://discordapp.com/users/699375169398898688
+       name: Discord
 nav:
   - Introduction: 'index.md'
   - Post-mortem:
     - Initial Ideas: 'Post-mortem 01.md'
-    - Trash Idle - Development: 'Post-mortem 02.md'
-    - Trash Idle - Playtesting The Cauchy: 'Post-mortem 03.md'
-  - 'Basic Properties Of The Cauchy Distribution.md'
-  - 'Truncating The Cauchy.md' 
-  - 'What Do You Mean It Has No Mean.md'
-  - 'The Central Limit Theorem.md'
+    - Development: 'Post-mortem 02.md'
+    - Playtesting The Cauchy: 'Post-mortem 03.md'
+    - The Central Limit Theorem: 'Post-mortem 04.md'
+    - Conclusion And Future Ideas: 'Post-mortem 05.md'
+  - Generating Cauchy Samples: 'Generating Cauchy Samples.md'
+  - Under Construction - Truncating The Cauchy: 'Truncating The Cauchy.md'

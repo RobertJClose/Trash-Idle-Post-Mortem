@@ -1,3 +1,10 @@
+# This Section Is Unfinished
+This page is still under construction. You might read about truncated distributions [here](https://en.wikipedia.org/wiki/Truncated_distribution) at least.
+
+This C# code demonstrates some of the lessons of this note - [link](https://dotnetfiddle.net/57g4yU).
+
+---
+
 As discussed in [[01 _ Using The Cauchy Distribution In A Game]], my initial attempts at using the Cauchy distribution as a game design element focused on random hit chances and random loot tables. I struggled to incorporate the distribution into those scenarios however. One of the issues was that in these scenarios, we typically make use of a random number between zero and one. The Cauchy distribution spans the entire real number-line however. 
 
 A natural idea then is to use the distribution's location and scale parameters to squish the distribution almost entirely within the range of zero to one. Here is a Cauchy distribution which has been squished in the $[0,1]$ range using the location and scale parameter:
@@ -177,7 +184,7 @@ $$
 $$
 
 
-Oh fucking hell!
+Oh!
 
 $$
 \mu_n = \frac{2S}{N} \left[ \sum_{i=0}^{n}  \right]

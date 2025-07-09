@@ -14,7 +14,7 @@ Could you give the Wiki writers a Cauchy item that drops randomly, at no mean ra
 
 ![Elden Ring Wiki](./Media/EldenRingWiki.png)
 
-*Elden Ring Wiki - [Fire Blossom](https://eldenring.wiki.fextralife.com/Fire+Blossom)* (I **really** don't like that you have to farm this ingredient if you want to routinely use certain bombs. The *real* reason for this post-mortem is so I can vent this frustration.)
+*Elden Ring Wiki - [Fire Blossom](https://eldenring.wiki.fextralife.com/Fire+Blossom)* (I **really** don't like that you have to farm this ingredient if you want to routinely use certain bombs)
 # The Problem With The Cauchy Distribution
 I could not work out how to use the Cauchy distribution to recreate the scenarios above.
 
@@ -28,7 +28,7 @@ There are two issues with using the Cauchy distribution to implement this.
 ## The Output Range
 The natural place to insert the Cauchy distribution into the above is in step one, but a Cauchy random variable isn't restricted to lie between zero and one. Instead the distribution covers the entire real number-line. 
 
-I've been tackling this issue but it's proven challenging. A natural idea is to reshape the distribution to *mostly* fit within the required range, and then we ignore any values which are too extreme:
+I've been tackling this issue but it's proven challenging. A natural idea is to use some of the distribution's parameters to *mostly* squish the function within the required range. We then ignore any values which are too extreme:
 
 ![Cauchy_SquishedZeroToOne](./Media/Cauchy_SquishedZeroToOne.png)
 
@@ -50,7 +50,10 @@ This idea proved to be a bit clunky, although it did produce this amusing piece 
 
 *Rats Are Generally Surrounded*
 
-Stripping the idea to its core, I realised that I was envisioning an [idle game](https://en.wikipedia.org/wiki/Incremental_game). The more natural idea in that case is to use the Cauchy values as the game's currency. I opened up a small canvas in Krita and drew the first thing that came to mind: a person sat at a computer:
+Stripping the idea to its core, I realised that I was envisioning an [idle game](https://en.wikipedia.org/wiki/Incremental_game). The more natural idea in that case is to use the Cauchy values as the game's currency. I opened up a small canvas in Krita and drew the first thing that came to mind - a person sat at a computer:
 
 ![](./Media/Protagonist.png)
 
+The rest of the game flowed naturally after this drawing. As it was the pompous trash game jam, I would pompously self-insert as the man at the computer. I sit idly creating trash, hoping to hit the jackpot and make a lot of money.
+
+[Part Two](./Post-mortem%2002.md)
